@@ -1,0 +1,85 @@
+@function random-hex() {
+    $cifre: 0;
+    $codicehex: "#";
+
+    @while $cifre < 6 {
+        $numerigenerati: random(16) - 1;
+
+
+        @if $numerigenerati >9 {
+            @if $numerigenerati ==10 {
+                $numerigenerati: A;
+            }
+
+            @if $numerigenerati ==11 {
+                $numerigenerati: B;
+            }
+
+            @if $numerigenerati ==12 {
+                $numerigenerati: C;
+            }
+
+            @if $numerigenerati ==13 {
+                $numerigenerati: D;
+            }
+
+            @if $numerigenerati ==14 {
+                $numerigenerati: E;
+            }
+
+            @if $numerigenerati ==15 {
+                $numerigenerati: F;
+            }
+        }
+
+
+        $codicehex: str-insert($codicehex, #{$numerigenerati}, 2);
+
+
+        $cifre: $cifre + 1;
+
+    }
+
+    @return unquote($codicehex);
+}
+
+
+
+
+
+.bounce {
+    animation: bounce 1s infinite;
+}
+
+@mixin bounce($durata: null, $distanza: null, $altezza){
+    animation-duration: $durata;
+    transform: translateY($distanza);
+    height: $altezza;
+}
+
+@keyframes bounce{
+    0% {@include bounce(0.5s, 0, 102px)}
+    20% {@include bounce(1s, -10px, 115px)}
+    40% {@include bounce(1s, -20px, 118px)}
+    60% {@include bounce(1s, -30px, 120px)}
+    80% {@include bounce(1s, -20px, 118px)}
+    100% {@include bounce(0.5s, -10px, 115px)}
+}
+
+
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: random-hex();
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    div {
+        background-color: red;
+        width: 120px;
+        height: 120px;
+        border-radius: 70px;
+    }
+}
+

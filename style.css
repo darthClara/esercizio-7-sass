@@ -1,0 +1,52 @@
+.bounce {
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0% {
+    animation-duration: 0.5s;
+    transform: translateY(0);
+    height: 102px;
+  }
+  20% {
+    animation-duration: 1s;
+    transform: translateY(-10px);
+    height: 115px;
+  }
+  40% {
+    animation-duration: 1s;
+    transform: translateY(-20px);
+    height: 118px;
+  }
+  60% {
+    animation-duration: 1s;
+    transform: translateY(-30px);
+    height: 120px;
+  }
+  80% {
+    animation-duration: 1s;
+    transform: translateY(-20px);
+    height: 118px;
+  }
+  100% {
+    animation-duration: 0.5s;
+    transform: translateY(-10px);
+    height: 115px;
+  }
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #EC76CB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body div {
+  background-color: red;
+  width: 120px;
+  height: 120px;
+  border-radius: 70px;
+}
+
+/*# sourceMappingURL=style.css.map */
